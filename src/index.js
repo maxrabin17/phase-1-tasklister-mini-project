@@ -5,18 +5,21 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault()
     let getUl = document.getElementById("tasks");
     let list = document.createElement('li');
-    getUl.append(list);
-    deleteFunction();
-
+    let button = document.createElement("button");
+    list.innerHTML = field.value
+    button.innerHTML = "X"
+    getUl.append(list, button);
+    deleteFunction(button)
   })
 });
+//deleteFunction();
+// 1. create button to delete
+// 2. 
 
-// 1. Grab task ul
-// 2. Create li with text from user input
-// 3. append the li to the ul
-
-function deleteFunction {
+function deleteFunction(button) {
   addEventListener("click", () =>{
-    document.getUl.reset()
+    button.onclick = function() {
+      this.parentElement.remove()
+    }
   })
 }
